@@ -53,11 +53,6 @@ Date: 16/09/21
 
 *** Solved it in C++***
 ```bash 
- // { Driver Code Starts
-#include <bits/stdc++.h>
-using namespace std;
-
- // } Driver Code Ends
 class Solution
 {
     public:
@@ -86,23 +81,58 @@ class Solution
        return count;
     }
 };
-
-// { Driver Code Starts.
-int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        int start[n], end[n];
-        for (int i = 0; i < n; i++) cin >> start[i];
-
-        for (int i = 0; i < n; i++) cin >> end[i];
-
-        Solution ob;
-        int ans = ob.maxMeetings(start, end, n);
-        cout << ans << endl;
-    }
-    return 0;
-}  // } Driver Code Ends
 ```
+
+#  Day3
+
+Date: 17/09/21
+
+3 [Solved Kth element in sorted array](https://practice.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1)
+
+```bash 
+class Solution {
+    public long kthElement( int a1[], int a2[], int n, int m, int k) {
+        List<Integer> r=new ArrayList<Integer>();
+        int i,j,t=0;
+        for(i=0;i<n;++i)
+        {
+            r.add(a1[i]);
+        }
+        for(j=0;j<m;++j)
+        {
+            r.add(a2[j]);
+        }
+        Collections.sort(r);
+        t=r.get(k-1);
+        return t;
+    }
+        
+}
+```
+#  Day4
+
+Date: 18/09/21
+
+4 [Solved sum of query II](https://practice.geeksforgeeks.org/problems/sum-of-query-ii5310/1)
+
+```bash 
+class Solution{
+    List<Integer> querySum(int n, int arr[], int q, int queries[])
+    {
+        // code here
+        List<Integer> res=new ArrayList<Integer>();
+        int s=0,i,j,k=0;
+        for(i=0;i<2*q;i=i+2)
+       {
+           for(j=queries[i]-1;j<queries[i+1];j++)
+           {
+               s=s+arr[j];
+           }
+           res.add(s);
+           s=0;
+       }
+        return res;
+    }
+}```
+
+
